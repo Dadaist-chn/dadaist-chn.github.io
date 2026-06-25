@@ -65,6 +65,31 @@ Leave the inner text empty — JS fills it on load.
 - **Update the CV PDFs:** drop new files into `assets/` with the same filenames.
 - **Change colors:** see the `:root` block at the top of `css/style.css`.
 
+## Visitor analytics (who's viewing, from which country)
+
+The site uses [GoatCounter](https://www.goatcounter.com) — free, privacy-friendly, no
+cookies, no consent banner needed. Your stats (including a **Locations** panel that
+breaks visitors down by country) live on a private dashboard only you can see.
+
+One-time setup:
+
+1. Sign up at <https://www.goatcounter.com> and pick a subdomain code, e.g. `yindaxu`.
+   Your dashboard will then be `https://yindaxu.goatcounter.com`.
+2. In `index.html`, find the GoatCounter `<script>` near the bottom and replace
+   `YOUR-CODE` with your code:
+
+   ```html
+   <script data-goatcounter="https://yindaxu.goatcounter.com/count"
+           async src="//gc.zgo.at/count.js"></script>
+   ```
+
+3. Commit, push, and visit your live site once. The hit shows up on the dashboard
+   within a few seconds. Open the dashboard's **Locations** widget to see countries.
+
+Notes: GoatCounter derives the country from the visitor's IP and then discards the IP,
+so you get country-level geography without storing personal data. Your own visits won't
+be counted while you're logged into the dashboard in the same browser.
+
 ## Optional: custom domain
 
 If you own a domain, add a `CNAME` file (one line containing the domain) and point a DNS CNAME record at `<your-username>.github.io`.
